@@ -1,0 +1,122 @@
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+target-version = "py310"
+
+[lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "D",
+    "UP",
+    "YTT",
+    "ASYNC",
+    "S",
+    "B",
+    "C4",
+    "T10",
+    "LOG",
+    "G",
+    "PIE",
+    "T20",
+    "Q",
+    "RET",
+    "SIM",
+    "TID",
+    "PTH",
+    "RUF",
+]
+
+ignore = [
+    "D100",
+    "D104",
+    "D105",
+    "D107",
+]
+
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[lint.per-file-ignores]
+"tests/**/*.py" = [
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "S101",
+    "ANN001",
+    "ANN201",
+]
+"**/__init__.py" = ["F401"]
+
+[lint.isort]
+known-first-party = ["app", "tests"]
+known-third-party = []
+lines-after-imports = 2
+force-sort-within-sections = true
+combine-as-imports = true
+
+[lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.pep8-naming]
+classmethod-decorators = [
+    "classmethod",
+    "pytest.fixture",
+    "pytest.mark.parametrize",
+]
+
+[lint.pylint]
+max-args = 5
+max-returns = 6
+max-branches = 12
+max-statements = 50
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
