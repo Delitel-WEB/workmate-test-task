@@ -1,3 +1,8 @@
+# Установка зависимостей проекта
+```sh
+pip3 install -r requirements.txt
+```
+
 # Использование
 ```bash
 python3 main.py --files data/math.csv --report median-coffee
