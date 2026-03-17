@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from app.loader.models import StudyRecord
+
 
 REPORTS = {}
 
@@ -17,6 +19,6 @@ class BaseReport(ABC):
             REPORTS[cls.name] = cls
 
     @abstractmethod
-    def build(self) -> None:
+    def build(self, records: list[StudyRecord]) -> None:
         """Метод создания отчёта."""
         ...
