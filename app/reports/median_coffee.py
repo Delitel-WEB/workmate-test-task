@@ -10,7 +10,7 @@ class MedianCoffee(BaseReport):
 
     name = "median-coffee"
 
-    def build(self, records: list[StudyRecord]):
+    def build(self, records: list[StudyRecord]) -> list[dict]:
         """Формирование отчёта."""
         student_spending = defaultdict(list)
         for record in records:

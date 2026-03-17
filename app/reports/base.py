@@ -23,11 +23,11 @@ class BaseReport(ABC):
             REPORTS[cls.name] = cls
 
     @abstractmethod
-    def build(self, records: list[StudyRecord]) -> None:
+    def build(self, records: list[StudyRecord]) -> list[dict]:
         """Метод создания отчёта."""
         ...
 
-    def print_report(self):
+    def print_report(self) -> None:
         """Вывод отчёта в консоль."""
         if not self.results:
             return
